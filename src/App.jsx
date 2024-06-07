@@ -9,12 +9,13 @@ function App() {
   const [height, setHeight] = useState(0)
   const [weight, setWeight] = useState(0)
   const [bmi, setBmi] = useState(0)
-  const [category,setCategory] = useState(0)
-  const [bg,setBg] = useState(0)
+  const [category,setCategory] = useState(null)
+  const [bg,setBg] = useState('rgba(255, 255, 255, 0.69)')
 
   const [isHeigt , setIsHeight] = useState(true)
   const [isWeight ,setIsWeight] = useState(true)
 
+  
 
   const validate = (e) => {
 
@@ -51,7 +52,7 @@ function App() {
     setIsWeight(true)
     setBmi(0)
     setCategory('')
-    setBg("white")
+    setBg("rgba(255, 255, 255, 0.69)")
   }
 
 
@@ -61,23 +62,23 @@ function App() {
 
     if(bmiValue <18.5){
       setCategory('Under Weight')
-      setBg('blue')
+      setBg('rgba(0, 0, 255, 0.69)')
     }
     else if(bmiValue >=18.5 && bmiValue <=24.9){
       setCategory('Normal')
-      setBg('green')
+      setBg('rgba(0, 255, 0, 0.69)')
     }
     else if(bmiValue >=25 && bmiValue <=29.9){
       setCategory('Over Weight')
-      setBg('yellow')
+      setBg('rgba(255, 255, 0, 0.69)')
     }
     else if(bmiValue >=30 && bmiValue <=34.9){
       setCategory('Obese')
-      setBg('Orange')
+      setBg('rgba(255, 69, 0, 0.69)')
     }
     else if(bmiValue >=35){
       setCategory('Extremely Overweight')
-      setBg('red')
+      setBg('rgba(255, 0, 0, 0.69)')
     }
   }
 
